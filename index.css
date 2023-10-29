@@ -15,22 +15,30 @@ body {
     object-fit: cover;
 }
 
-.header{
+.header {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 200px;
 }
 
-.title{
+.title {
     font-size: 60px;
-    text-align:  center;
-}
-
-.footer{
     text-align: center;
 }
 
-.sound{
-    cursor: pointer;
+.footer {
+    text-align: center;
 }
+
+.sound {
+    cursor: pointer;
+    margin: 30px;
+    display: inline-block;
+    text-align: center;
+}
+
+input {
+    color: white;
+}
+

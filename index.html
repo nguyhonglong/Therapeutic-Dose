@@ -31,26 +31,80 @@
     </div>
 
     <div class="container">
-        <div>
-            <audio id="rain" src="sounds/light-rain-ambient-114354.mp3" loop></audio>
-            <div class="sound" onclick="playPauseAudio('rain')">Rain</div>
-            <input type="range" min="0" max="1" step="0.1" value="1" onchange="setVolume('rain', this.value)">
+        <div class="row">
+            <div class="sound col">
+                <audio id="rain" src="sounds/light-rain-ambient-114354.mp3" loop></audio>
+                <div onclick="playPauseAudio('rain')">Rain</div>
+                <input type="range" min="0" max="1" step="0.1" value="1" onchange="setVolume('rain', this.value)">
+            </div>
+
+            <div class="sound col">
+                <audio id="thunder" src="sounds/natural-thunder-113219.mp3" loop></audio>
+                <div onclick="playPauseAudio('thunder')">Thunder</div>
+                <input type="range" min="0" max="1" step="0.1" value="1" onchange="setVolume('thunder', this.value)">
+            </div>
+
+            <div class="sound col">
+                <audio id="wave" src="sounds/sandy-beach-calm-waves-water-nature-sounds-8052.mp3" loop></audio>
+                <div onclick="playPauseAudio('wave')">Wave</div>
+                <input type="range" min="0" max="1" step="0.1" value="1" onchange="setVolume('wave', this.value)">
+            </div>
+
+            <div class="sound col">
+                <audio id="sing1" src="sounds/singing-bowl-deep-sound-27532.mp3" loop></audio>
+                <div onclick="playPauseAudio('sing1')">Deep sound</div>
+                <input type="range" min="0" max="1" step="0.1" value="1" onchange="setVolume('sing1', this.value)">
+            </div>
+
+            <div class="sound col">
+                <audio id="sing2" src="sounds/singing-bowl-singing-29713.mp3" loop></audio>
+                <div onclick="playPauseAudio('sing2')">Singing</div>
+                <input type="range" min="0" max="1" step="0.1" value="1" onchange="setVolume('sing2', this.value)">
+            </div>
         </div>
 
-        <div>
-            <audio id="thunder" src="sounds/natural-thunder-113219.mp3" loop></audio>
-            <div class="sound" onclick="playPauseAudio('thunder')">Thunder</div>
-            <input type="range" min="0" max="1" step="0.1" value="1" onchange="setVolume('thunder', this.value)">
+        <div class="row">
+            <div class="sound col">
+                <audio id="sing3" src="sounds/tibetan-singing-bowl-54400.mp3" loop></audio>
+                <div onclick="playPauseAudio('sing3')">Tibetan</div>
+                <input type="range" min="0" max="1" step="0.1" value="1" onchange="setVolume('sing3', this.value)">
+            </div>
+
+            <div class="sound col">
+                <audio id="fire" src="sounds/campfire-crackling-fireplace-sound-119594.mp3" loop></audio>
+                <div onclick="playPauseAudio('fire')">Fire</div>
+                <input type="range" min="0" max="1" step="0.1" value="1" onchange="setVolume('fire', this.value)">
+            </div>
+
+            <div class="sound col">
+                <audio id="type" src="sounds/typing-6458.mp3" loop></audio>
+                <div onclick="playPauseAudio('type')">Typing</div>
+                <input type="range" min="0" max="1" step="0.1" value="1" onchange="setVolume('type', this.value)">
+            </div>
+
+            <div class="sound col">
+                <audio id="piano" src="sounds/the-last-piano-112677.mp3" loop></audio>
+                <div onclick="playPauseAudio('piano')">Piano</div>
+                <input type="range" min="0" max="1" step="0.1" value="1" onchange="setVolume('piano', this.value)">
+            </div>
+
+            <div class="sound col">
+                <audio id="talk" src="sounds/crowd_talking-6762.mp3" loop></audio>
+                <div onclick="playPauseAudio('talk')">Crowded talking</div>
+                <input type="range" min="0" max="1" step="0.1" value="1" onchange="setVolume('talk', this.value)">
+            </div>
+
+            <div class="sound col">
+                <audio id="bird" src="sounds/late-afternoon-suburban-ambience-loud-storm-bird-singing-9331.mp3"
+                    loop></audio>
+                <div onclick="playPauseAudio('bird')">Bird</div>
+                <input type="range" min="0" max="1" step="0.1" value="1" onchange="setVolume('bird', this.value)">
+            </div>
         </div>
 
-        <div>
-            <audio id="thunder" src="sounds/natural-thunder-113219.mp3" loop></audio>
-            <div class="sound" onclick="playPauseAudio('thunder')">Thunder</div>
-            <input type="range" min="0" max="1" step="0.1" value="1" onchange="setVolume('thunder', this.value)">
-        </div>
 
-        
-        
+
+
         <script>
             function playPauseAudio(audioId) {
                 var audioElement = document.getElementById(audioId);
