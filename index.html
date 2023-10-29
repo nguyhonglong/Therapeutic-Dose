@@ -30,7 +30,7 @@
                     var weatherDescription = data.weather[0].description;
 
                     // Hiển thị thông tin thời tiết và thành phố
-                    $('#temperature').text('Temperature: ' + temperature + '°C');
+                    $('#temperature').text('Temperature: ' + (temperature-273).toFixed(2) + '°C');
                     $('#city').text('City: ' + city);
                     $('#weather-description').text('Weather: ' + weatherDescription);
                 }
