@@ -1,8 +1,8 @@
 body {
     margin: 0;
     padding: 0;
-    overflow: hidden;
     color: white;
+    font-family: 'Playpen Sans', cursive;
 }
 
 #backgroundVideo {
@@ -42,3 +42,14 @@ input {
     color: white;
 }
 
+.copyright{
+    
+}
+
+.weather{
+    text-align: center;
+}
+
+.container{
+    margin-bottom: 80px;
+}

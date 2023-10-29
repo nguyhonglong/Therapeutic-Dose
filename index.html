@@ -16,6 +16,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100;200;300;400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="index.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Tạo một request để lấy thông tin thời tiết từ API (ví dụ: OpenWeatherMap)
+            $.ajax({
+                url: 'https://api.openweathermap.org/data/2.5/weather?q=Hanoi&appid=422415079971cd82421b289c5f4795bb',
+                dataType: 'json',
+                success: function (data) {
+                    // Lấy thông tin thời tiết từ dữ liệu trả về
+                    var temperature = data.main.temp;
+                    var city = data.name;
+                    var weatherDescription = data.weather[0].description;
+
+                    // Hiển thị thông tin thời tiết và thành phố
+                    $('#temperature').text('Temperature: ' + temperature + '°C');
+                    $('#city').text('City: ' + city);
+                    $('#weather-description').text('Weather: ' + weatherDescription);
+                }
+            });
+
+            // Cập nhật thời gian thực mỗi giây
+            setInterval(function () {
+                var currentTime = new Date();
+                $('#current-time').text('Current time: ' + currentTime.toLocaleTimeString());
+            }, 1000);
+        });
+    </script>
 </head>
 
 <body>
@@ -23,11 +50,20 @@
     <video id="backgroundVideo" autoplay loop muted>
         <source src="videos/rain_-_28236 (Original).mp4" type="video/mp4">
     </video>
-
+    <div class="copyright">
+        <h3>© Nguy Hong Long 2023.</h3>
+    </div>
     <div class="header">
         <div>
             <h5 class="title">Therapeutic Dose</h5>
         </div>
+    </div>
+
+    <div class="weather">
+        <h2 id="current-time"></h2>
+        <h2 id="temperature"></h2>
+        <h2 id="city"></h2>
+        <h2 id="weather-description"></h2>
     </div>
 
     <div class="container">
@@ -61,9 +97,7 @@
                 <div onclick="playPauseAudio('sing2')">Singing</div>
                 <input type="range" min="0" max="1" step="0.1" value="1" onchange="setVolume('sing2', this.value)">
             </div>
-        </div>
 
-        <div class="row">
             <div class="sound col">
                 <audio id="sing3" src="sounds/tibetan-singing-bowl-54400.mp3" loop></audio>
                 <div onclick="playPauseAudio('sing3')">Tibetan</div>
@@ -121,6 +155,58 @@
                 audioElement.volume = volume;
             }
         </script>
+    </div>
+
+    <div class="container">
+        Therapeutic Dose is an online background noise generator designed to help you relax, focus, and tune out unpleasant
+        sounds from your environment. <br>
+
+        Background noise can be distracting, or it can be calming, it all depends on the type of sound. The regular
+        whirr of a fan, the gentle patter of rain against the window or the constant buzz of a white noise machine are
+        sounds that many people find relaxing. Even the distant rumble of thunder can be soothing when you’re
+        comfortable and safe indoors.<br>
+
+        But other types of noise can be distracting, irritating or even stressful -- the hammering from the building
+        site across the street, the stomping of the neighbors in the apartment upstairs, or the thumping bass from the
+        party outside.<br>
+
+        Therapeutic Dose is designed to help you ignore bothersome noise by playing custom ambient sounds to suit your
+        environment.<br>
+
+        If you’re trying to study in the library and someone won’t stop talking, try listening to the Coffee Shop sound
+        to transform a single, distracting voice into a pleasant background murmur. If music coming through the wall is
+        keeping you up, try a mix of Singing Bowl with Waves or Wind to help you ignore it. To disguise high-pitched
+        sounds, Birds and Crickets are a good option, and for low-pitched sounds, try Thunder.<br>
+
+        If you’re trying to fall asleep, you might find the timer function handy. You can set sounds to stop playing
+        after a certain period of time, or if you prefer you can have them fade out gradually to silence.<br>
+
+        If you want some more variety, try the Meander function (the button that looks like a squiggly line to the left
+        of the play button). When Meander is active, any sound which isn’t silent will gently increase and decrease in
+        volume in a random pattern, creating a soundscape which undulates and flows just like background sounds in real
+        life.<br>
+
+        If you still find yourself distracted by unpleasant sounds even after using Therapeutic Dose, there are a few more
+        things you can try.<br>
+
+        One option is to combine ambient sounds with other types of audio, like some relaxing music. If you’re unsure
+        what type of music to try, searching for “ambient music” on YouTube or Spotify is a good place to start.<br>
+
+        Another option is to invest in a pair of noise-cancelling headphones. However, while noise cancellation
+        technology tends to be pretty effective against steady, predictable noise sources, like the sound of travelling
+        in a plane or train, it’s much less effective against more random, intermittent noise, like construction work or
+        emergency sirens.<br>
+
+        Finally, when all else fails you can try a pair of earplugs. But again, these tend to work well for some
+        frequencies of sounds and less well for others. In a previous apartment I lived above neighbours who liked to
+        party til 6am all days of the week. I would sometimes wear earplugs, then put my over-ear noise-cancelling
+        headphones on top playing ambient music and nature sounds. It’s amazing what the mind comes up with when you
+        really, really need to sleep.<br>
+
+        I hope Therapeutic Dose is enjoyable and useful for you. If you have any questions, comments or complaints, please
+        send me a message at nguyhonglong2002@gmail.com<br>
+
+        I hope you have a relaxing day!<br>
     </div>
 
     <div class="footer">
