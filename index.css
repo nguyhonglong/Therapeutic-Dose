@@ -2,8 +2,7 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    font-family: 'Playpen Sans', cursive;
-    
+    color: white;
 }
 
 #backgroundVideo {
@@ -23,6 +22,15 @@ body {
     height: 200px;
 }
 
-.header > img{
-    width: 50%;
+.title{
+    font-size: 60px;
+    text-align:  center;
+}
+
+.footer{
+    text-align: center;
+}
+
+.sound{
+    cursor: pointer;
 }

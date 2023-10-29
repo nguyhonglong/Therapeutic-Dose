@@ -25,30 +25,52 @@
     </video>
 
     <div class="header">
-        <img src="images/logo.png" alt="">
+        <div>
+            <h5 class="title">Therapeutic Dose</h5>
+        </div>
     </div>
 
-    <div>
-        <audio id="audioPlayer" src="sounds/light-rain-ambient-114354.mp3" loop></audio>
-        <button onclick="toggleAudio()">Light rain</button>
-        <input type="range" id="volumeSlider" min="0" max="1" step="0.1" onchange="changeVolume(this.value)">
+    <div class="container">
+        <div>
+            <audio id="rain" src="sounds/light-rain-ambient-114354.mp3" loop></audio>
+            <div class="sound" onclick="playPauseAudio('rain')">Rain</div>
+            <input type="range" min="0" max="1" step="0.1" value="1" onchange="setVolume('rain', this.value)">
+        </div>
 
+        <div>
+            <audio id="thunder" src="sounds/natural-thunder-113219.mp3" loop></audio>
+            <div class="sound" onclick="playPauseAudio('thunder')">Thunder</div>
+            <input type="range" min="0" max="1" step="0.1" value="1" onchange="setVolume('thunder', this.value)">
+        </div>
+
+        <div>
+            <audio id="thunder" src="sounds/natural-thunder-113219.mp3" loop></audio>
+            <div class="sound" onclick="playPauseAudio('thunder')">Thunder</div>
+            <input type="range" min="0" max="1" step="0.1" value="1" onchange="setVolume('thunder', this.value)">
+        </div>
+
+        
+        
         <script>
-            var audioPlayer = document.getElementById("audioPlayer");
-            var volumeSlider = document.getElementById("volumeSlider");
+            function playPauseAudio(audioId) {
+                var audioElement = document.getElementById(audioId);
 
-            function toggleAudio() {
-                if (audioPlayer.paused) {
-                    audioPlayer.play();
+                if (audioElement.paused) {
+                    audioElement.play();
                 } else {
-                    audioPlayer.pause();
+                    audioElement.pause();
                 }
             }
 
-            function changeVolume(volume) {
-                audioPlayer.volume = volume;
+            function setVolume(audioId, volume) {
+                var audioElement = document.getElementById(audioId);
+                audioElement.volume = volume;
             }
         </script>
+    </div>
+
+    <div class="footer">
+        <h3>© Nguy Hong Long 2023.</h3>
     </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
